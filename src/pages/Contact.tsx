@@ -111,8 +111,8 @@ const Contact = () => {
                       <div>
                         <h3 className="text-lg font-semibold mb-1">Phone</h3>
                         <p className="text-muted-foreground">
-                          +254 (0) 712 345 678<br />
-                          +254 (0) 723 456 789
+                          
+                          +254 (0) 794564808
                         </p>
                       </div>
                     </div>
@@ -126,8 +126,8 @@ const Contact = () => {
                       <div>
                         <h3 className="text-lg font-semibold mb-1">Email</h3>
                         <p className="text-muted-foreground">
-                          info@transpoto.com<br />
-                          sales@transpoto.com
+                          <br />
+                          sales@transpotofreight.com
                         </p>
                       </div>
                     </div>
