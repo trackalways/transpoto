@@ -17,9 +17,9 @@ const slideUp = {
 
 export default function DomesticLogistics() {
   return (
-    <div className="page-root">
+    <div className="page-root min-h-screen flex flex-col">
       <Navbar />
-      <Box component="main" sx={{ flexGrow: 1, bgcolor: '#f5f7fa' }}>
+      <Box component="main" sx={{ flexGrow: 1, bgcolor: '#f5f7fa', pt: '80px' }}>
         {/* Hero Section */}
         <Box sx={{ background: 'linear-gradient(to right, #0369a1, #075985)', color: 'white', py: 8 }}>
           <Container maxWidth="lg">

@@ -17,9 +17,9 @@ const slideUp = {
 
 export default function AirFreight() {
   return (
-    <div className="page-root">
+    <div className="page-root min-h-screen flex flex-col">
       <Navbar />
-      <Box component="main" sx={{ flexGrow: 1, bgcolor: '#f5f7fa' }}>
+      <Box component="main" sx={{ flexGrow: 1, bgcolor: '#f5f7fa', pt: '80px' }}>
         {/* Hero Section */}
         <Box sx={{ 
           background: 'linear-gradient(rgba(3, 105, 161, 0.8), rgba(7, 89, 133, 0.8))', 

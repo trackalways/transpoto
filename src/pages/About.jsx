@@ -4,9 +4,9 @@ import Footer from '../components/layout/Footer';
 
 export default function About() {
   return (
-    <div className="page-root">
+    <div className="page-root min-h-screen flex flex-col">
       <Navbar />
-      <main className="py-12">
+      <main className="py-12 pt-28 flex-grow">
         <div className="container mx-auto px-4">
           <h1 className="text-4xl font-bold text-transpoto-700 mb-6">About Transpoto Freight Ltd.</h1>
           <div className="prose max-w-3xl">
