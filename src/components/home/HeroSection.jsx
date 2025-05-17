@@ -13,14 +13,14 @@ const statsData = [
 const StatCounter = ({ value, label }) => {
   return (
     <motion.div 
-      className="text-center lg:text-left flex-1 min-w-[150px]"
+      className="text-center lg:text-left flex-1 min-w-[120px]"
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.6 }}
     >
       <motion.div 
-        className="text-4xl md:text-5xl font-bold text-white mb-2"
+        className="text-3xl md:text-4xl font-bold text-white mb-1"
         initial={{ scale: 0.8 }}
         whileInView={{ scale: 1 }}
         viewport={{ once: true }}
@@ -28,14 +28,14 @@ const StatCounter = ({ value, label }) => {
       >
         {value}
       </motion.div>
-      <div className="text-lg text-blue-100 font-medium">{label}</div>
+      <div className="text-base text-blue-100 font-medium">{label}</div>
     </motion.div>
   );
 };
 
 export default function HeroSection() {
   return (
-    <section className="bg-transpoto-800 text-white pt-28 pb-16 md:pt-32 md:pb-20 relative overflow-hidden">
+    <section className="bg-transpoto-800 text-white pt-20 pb-12 md:pt-24 md:pb-16 relative overflow-hidden">
       {/* Animation Background */}
       <div className="absolute inset-0 z-0 bg-gradient-to-br from-transpoto-900 via-transpoto-800 to-transpoto-700 overflow-hidden">
         {/* Enhanced sun with dynamic glow and rays */}
@@ -720,17 +720,17 @@ export default function HeroSection() {
             transition={{ duration: 0.8 }}
           >
             <motion.h1 
-              className="text-5xl md:text-6xl xl:text-7xl font-bold mb-10"
+              className="text-4xl md:text-5xl xl:text-6xl font-bold mb-6"
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7 }}
             >
-              <span className="block mb-3">Global Logistics</span>
+              <span className="block mb-2">Global Logistics</span>
               <span className="block text-blue-300">Simplified</span>
             </motion.h1>
             
             <motion.p 
-              className="text-2xl mb-10 text-gray-100 max-w-2xl leading-relaxed"
+              className="text-xl md:text-2xl mb-8 text-gray-100 max-w-2xl leading-relaxed"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2, duration: 0.7 }}
@@ -738,7 +738,7 @@ export default function HeroSection() {
               Your trusted logistics partner with global reach. We deliver efficient freight and transportation solutions for businesses worldwide.
             </motion.p>
             
-            <div className="flex flex-col sm:flex-row gap-5 mb-12">
+            <div className="flex flex-col sm:flex-row gap-4 mb-10">
               <motion.div 
                 whileHover={{ scale: 1.03 }} 
                 whileTap={{ scale: 0.97 }}
@@ -748,7 +748,7 @@ export default function HeroSection() {
               >
                 <Link 
                   to="/contact" 
-                  className="bg-white text-transpoto-800 px-8 py-4 rounded-md font-semibold hover:bg-gray-100 transition-colors text-center block flex items-center justify-center shadow-lg"
+                  className="bg-white text-transpoto-800 px-6 py-3 rounded-md font-semibold hover:bg-gray-100 transition-colors text-center block flex items-center justify-center shadow-lg"
                 >
                   Request a Quote <FaArrowRight className="ml-2" />
                 </Link>
@@ -762,7 +762,7 @@ export default function HeroSection() {
               >
                 <Link 
                   to="/domestic-logistics" 
-                  className="border-2 border-transpoto-400 text-white px-8 py-4 rounded-md font-semibold hover:bg-transpoto-700 hover:border-transpoto-500 transition-all text-center block"
+                  className="border-2 border-transpoto-400 text-white px-6 py-3 rounded-md font-semibold hover:bg-transpoto-700 hover:border-transpoto-500 transition-all text-center block"
                 >
                   Our Services
                 </Link>
@@ -771,8 +771,8 @@ export default function HeroSection() {
           </motion.div>
         </div>
         
-        {/* Service icons */}
-        <div className="grid grid-cols-3 gap-4 md:gap-8 max-w-2xl mx-auto mt-16 mb-12 relative z-20">
+        {/* Service icons - adjusted for reduced hero section */}
+        <div className="grid grid-cols-3 gap-5 md:gap-10 max-w-3xl mx-auto mt-14 mb-12 relative z-20">
           {[
             { icon: FaTruck, label: "Road Freight" },
             { icon: FaPlane, label: "Air Freight" },
@@ -785,10 +785,10 @@ export default function HeroSection() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.6 + (index * 0.1), duration: 0.5 }}
             >
-              <div className="bg-transpoto-700 mx-auto rounded-full w-20 h-20 flex items-center justify-center mb-4 shadow-md">
-                <service.icon className="text-3xl text-blue-300" />
+              <div className="bg-transpoto-700 mx-auto rounded-full w-24 h-24 md:w-28 md:h-28 flex items-center justify-center mb-4 shadow-lg">
+                <service.icon className="text-4xl md:text-5xl text-blue-300" />
               </div>
-              <p className="text-lg font-medium">{service.label}</p>
+              <p className="text-lg md:text-xl font-medium">{service.label}</p>
             </motion.div>
           ))}
         </div>
