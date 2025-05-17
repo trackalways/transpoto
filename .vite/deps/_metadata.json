@@ -1,0 +1,106 @@
+{
+  "hash": "5efd2f15",
+  "configHash": "ca080705",
+  "lockfileHash": "a57d7e78",
+  "browserHash": "411b462b",
+  "optimized": {
+    "react": {
+      "src": "../../node_modules/react/index.js",
+      "file": "react.js",
+      "fileHash": "2c68afe7",
+      "needsInterop": true
+    },
+    "react-dom/client": {
+      "src": "../../node_modules/react-dom/client.js",
+      "file": "react-dom_client.js",
+      "fileHash": "d617c602",
+      "needsInterop": true
+    },
+    "react-router-dom": {
+      "src": "../../node_modules/react-router-dom/dist/index.js",
+      "file": "react-router-dom.js",
+      "fileHash": "df000edd",
+      "needsInterop": false
+    },
+    "@mui/material": {
+      "src": "../../node_modules/@mui/material/index.js",
+      "file": "@mui_material.js",
+      "fileHash": "df36584b",
+      "needsInterop": false
+    },
+    "@mui/icons-material/CheckCircle": {
+      "src": "../../node_modules/@mui/icons-material/CheckCircle.js",
+      "file": "@mui_icons-material_CheckCircle.js",
+      "fileHash": "f82e6dcc",
+      "needsInterop": true
+    },
+    "@mui/icons-material/LocalShipping": {
+      "src": "../../node_modules/@mui/icons-material/LocalShipping.js",
+      "file": "@mui_icons-material_LocalShipping.js",
+      "fileHash": "09c70915",
+      "needsInterop": true
+    },
+    "@mui/icons-material/AccessTime": {
+      "src": "../../node_modules/@mui/icons-material/AccessTime.js",
+      "file": "@mui_icons-material_AccessTime.js",
+      "fileHash": "9f09d2da",
+      "needsInterop": true
+    },
+    "@mui/icons-material/Public": {
+      "src": "../../node_modules/@mui/icons-material/Public.js",
+      "file": "@mui_icons-material_Public.js",
+      "fileHash": "4da218fa",
+      "needsInterop": true
+    },
+    "@mui/icons-material/Security": {
+      "src": "../../node_modules/@mui/icons-material/Security.js",
+      "file": "@mui_icons-material_Security.js",
+      "fileHash": "37122170",
+      "needsInterop": true
+    },
+    "@mui/icons-material/Inventory": {
+      "src": "../../node_modules/@mui/icons-material/Inventory.js",
+      "file": "@mui_icons-material_Inventory.js",
+      "fileHash": "e61009e8",
+      "needsInterop": true
+    },
+    "@mui/icons-material/BarChart": {
+      "src": "../../node_modules/@mui/icons-material/BarChart.js",
+      "file": "@mui_icons-material_BarChart.js",
+      "fileHash": "8653b1b6",
+      "needsInterop": true
+    },
+    "@mui/icons-material/Star": {
+      "src": "../../node_modules/@mui/icons-material/Star.js",
+      "file": "@mui_icons-material_Star.js",
+      "fileHash": "87525040",
+      "needsInterop": true
+    },
+    "@mui/icons-material/ArrowForwardIos": {
+      "src": "../../node_modules/@mui/icons-material/ArrowForwardIos.js",
+      "file": "@mui_icons-material_ArrowForwardIos.js",
+      "fileHash": "8db15f6e",
+      "needsInterop": true
+    },
+    "react-icons/fa": {
+      "src": "../../node_modules/react-icons/fa/index.mjs",
+      "file": "react-icons_fa.js",
+      "fileHash": "22c7cba8",
+      "needsInterop": false
+    }
+  },
+  "chunks": {
+    "chunk-JJUDEWR2": {
+      "file": "chunk-JJUDEWR2.js"
+    },
+    "chunk-JY2BTPCH": {
+      "file": "chunk-JY2BTPCH.js"
+    },
+    "chunk-VVTXCIY5": {
+      "file": "chunk-VVTXCIY5.js"
+    },
+    "chunk-45FXRYJS": {
+      "file": "chunk-45FXRYJS.js"
+    }
+  }
+}
