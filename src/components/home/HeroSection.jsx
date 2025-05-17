@@ -13,14 +13,14 @@ const statsData = [
 const StatCounter = ({ value, label }) => {
   return (
     <motion.div 
-      className="text-center lg:text-left flex-1 min-w-[120px]"
+      className="text-center lg:text-left flex-1 min-w-[150px]"
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.6 }}
     >
       <motion.div 
-        className="text-3xl md:text-4xl font-bold text-white mb-1"
+        className="text-4xl md:text-5xl font-bold text-white mb-2"
         initial={{ scale: 0.8 }}
         whileInView={{ scale: 1 }}
         viewport={{ once: true }}
@@ -28,7 +28,7 @@ const StatCounter = ({ value, label }) => {
       >
         {value}
       </motion.div>
-      <div className="text-sm text-blue-100">{label}</div>
+      <div className="text-lg text-blue-100 font-medium">{label}</div>
     </motion.div>
   );
 };
@@ -347,14 +347,14 @@ export default function HeroSection() {
         {[...Array(6)].map((_, i) => {
           // Determine ship properties based on index
           const isLarge = i < 3;
-          const size = isLarge ? 4 + (i % 3) : 2 + (i % 2);
+          const size = isLarge ? 5 + (i % 3) : 3 + (i % 2); // Larger sizes for better visibility
           
           // Better distribution across the entire scene
           const positions = [5, 20, 35, 50, 65, 80]; // Specific positions for better distribution
           const initialPosition = positions[i];
           const direction = i % 2 === 0;
-          const speed = 20 + (i * 5); // Slower for more realistic movement
-          const delay = i * 3;
+          const speed = 15 + (i * 3); // Faster for more lively movement
+          const delay = i * 2;
           
           // Varied vertical positions for depth
           const yOffsets = [15, 20, 25, 18, 22, 28]; // Specific depths for better distribution
@@ -370,16 +370,16 @@ export default function HeroSection() {
                 perspective: '1000px'
               }}
               animate={{ 
-                x: ["0%", direction ? "25%" : "-25%"], // Shorter distance for more realistic movement
-                y: [0, -2, 1, -1, 0], // Subtle bobbing
-                rotateY: [0, direction ? 3 : -3, 0], // Subtle turning
-                rotateZ: [-0.5, 0.5, -0.3, 0.3, -0.5] // Subtle rocking
+                x: ["0%", direction ? "35%" : "-35%"], // Longer distance for more lively movement
+                y: [0, -3, 2, -2, 0], // More pronounced bobbing
+                rotateY: [0, direction ? 5 : -5, 0], // More pronounced turning
+                rotateZ: [-1, 1, -0.5, 0.5, -1] // More pronounced rocking
               }}
               transition={{
                 x: { duration: speed, ease: "easeInOut", repeat: Infinity, repeatType: "reverse", delay },
-                y: { duration: 4 + (i % 3), ease: "easeInOut", repeat: Infinity },
-                rotateY: { duration: 10, ease: "easeInOut", repeat: Infinity },
-                rotateZ: { duration: 6, ease: "easeInOut", repeat: Infinity }
+                y: { duration: 3 + (i % 3), ease: "easeInOut", repeat: Infinity },
+                rotateY: { duration: 8, ease: "easeInOut", repeat: Infinity },
+                rotateZ: { duration: 4, ease: "easeInOut", repeat: Infinity }
               }}
             >
               <div className="relative">
@@ -461,7 +461,7 @@ export default function HeroSection() {
         {/* 5 Planes with varied movements */}
         {[...Array(5)].map((_, i) => {
           // Determine plane properties based on index
-          const size = 2 + (i % 3); // Varied sizes for better visual interest
+          const size = 3 + (i % 3); // Larger sizes for better visibility
           
           // Create specific flight paths for more realistic distribution
           const flightPaths = [
@@ -475,11 +475,11 @@ export default function HeroSection() {
           const path = flightPaths[i];
           const direction = path.startX < path.endX;
           const flightDistance = Math.abs(path.endX - path.startX);
-          const speed = 25 + (i * 5); // Slower for more realistic movement
-          const delay = i * 3;
+          const speed = 20 + (i * 3); // Faster for more lively movement
+          const delay = i * 2;
           
-          // Calculate a curved flight path
-          const midPointY = (path.startY + path.endY) / 2 - (direction ? 5 : -5);
+          // Calculate a more dynamic curved flight path
+          const midPointY = (path.startY + path.endY) / 2 - (direction ? 8 : -8); // More pronounced curve
           
           return (
             <motion.div
@@ -495,12 +495,12 @@ export default function HeroSection() {
                 x: ["0%", direction ? `${flightDistance}%` : `-${flightDistance}%`],
                 y: [
                   "0%", 
-                  `${(path.endY - path.startY) * 0.3}%`, 
-                  `${(path.endY - path.startY) * 0.7}%`, 
+                  `${(path.endY - path.startY) * 0.3 - 5}%`, // More dynamic vertical movement
+                  `${(path.endY - path.startY) * 0.7 + 3}%`, 
                   `${path.endY - path.startY}%`
                 ],
-                rotateY: [0, direction ? 2 : -2, 0],
-                rotateZ: direction ? [-1, 1, -0.5, 0] : [1, -1, 0.5, 0]
+                rotateY: [0, direction ? 5 : -5, 0], // More pronounced banking
+                rotateZ: direction ? [-2, 2, -1, 0] : [2, -2, 1, 0] // More pronounced tilting
               }}
               transition={{
                 x: { duration: speed, ease: "linear", repeat: Infinity, repeatType: "loop", delay },
@@ -511,8 +511,8 @@ export default function HeroSection() {
                   repeatType: "loop", 
                   delay 
                 },
-                rotateY: { duration: 8, ease: "easeInOut", repeat: Infinity },
-                rotateZ: { duration: 12, ease: "easeInOut", repeat: Infinity }
+                rotateY: { duration: 6, ease: "easeInOut", repeat: Infinity }, // Faster banking
+                rotateZ: { duration: 8, ease: "easeInOut", repeat: Infinity } // Faster tilting
               }}
             >
               <div className="relative">
@@ -596,15 +596,15 @@ export default function HeroSection() {
         {[...Array(4)].map((_, i) => {
           // Determine truck properties based on index
           const isBig = i < 2; // First 2 are big trucks, last 2 are small
-          const size = isBig ? 4 : 2; // Big trucks are 4xl, small trucks are 2xl
+          const size = isBig ? 5 : 3; // Increased sizes for better visibility
           
           // Better distribution across the road
           const positions = [8, 30, 55, 75]; // Specific positions for better distribution
           const initialPosition = positions[i];
           
           const direction = i % 2 === 0;
-          const speed = 18 + (i % 3 * 4); // Varied speeds for more realistic traffic flow
-          const delay = i * 3;
+          const speed = 15 + (i % 3 * 3); // Faster for more lively movement
+          const delay = i * 2;
           
           // Slight vertical offset for lane positioning
           const laneOffset = i % 2 === 0 ? 3.5 : 5.5; // Two lanes
@@ -618,14 +618,14 @@ export default function HeroSection() {
                 left: `${initialPosition}%`,
               }}
               animate={{ 
-                x: ["0%", direction ? "60%" : "-60%"], // Longer travel distance
-                y: [0, -0.5, 0, 0.5, 0], // Subtle vertical movement for road bumps
-                rotate: [0, direction ? 0.3 : -0.3, 0, direction ? -0.3 : 0.3, 0] // Subtle rotation for suspension effect
+                x: ["0%", direction ? "70%" : "-70%"], // Even longer travel distance for more lively movement
+                y: [0, -1, 0.5, -0.5, 0], // More pronounced vertical movement for road bumps
+                rotate: [0, direction ? 0.8 : -0.8, 0, direction ? -0.8 : 0.8, 0] // More pronounced rotation for suspension effect
               }}
               transition={{
                 x: { duration: speed, ease: "linear", repeat: Infinity, repeatType: "loop", delay },
-                y: { duration: 0.8, ease: "easeInOut", repeat: Infinity },
-                rotate: { duration: 0.8, ease: "easeInOut", repeat: Infinity }
+                y: { duration: 0.6, ease: "easeInOut", repeat: Infinity }, // Faster bouncing
+                rotate: { duration: 0.6, ease: "easeInOut", repeat: Infinity } // Faster rocking
               }}
             >
               <div className="relative">
@@ -720,17 +720,17 @@ export default function HeroSection() {
             transition={{ duration: 0.8 }}
           >
             <motion.h1 
-              className="text-4xl md:text-5xl xl:text-6xl font-bold mb-8"
+              className="text-5xl md:text-6xl xl:text-7xl font-bold mb-10"
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7 }}
             >
-              <span className="block mb-2">Global Logistics</span>
+              <span className="block mb-3">Global Logistics</span>
               <span className="block text-blue-300">Simplified</span>
             </motion.h1>
             
             <motion.p 
-              className="text-xl mb-8 text-gray-100 max-w-xl"
+              className="text-2xl mb-10 text-gray-100 max-w-2xl leading-relaxed"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2, duration: 0.7 }}
@@ -785,10 +785,10 @@ export default function HeroSection() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.6 + (index * 0.1), duration: 0.5 }}
             >
-              <div className="bg-transpoto-700 mx-auto rounded-full w-16 h-16 flex items-center justify-center mb-3 shadow-md">
-                <service.icon className="text-2xl text-blue-300" />
+              <div className="bg-transpoto-700 mx-auto rounded-full w-20 h-20 flex items-center justify-center mb-4 shadow-md">
+                <service.icon className="text-3xl text-blue-300" />
               </div>
-              <p className="text-sm font-medium">{service.label}</p>
+              <p className="text-lg font-medium">{service.label}</p>
             </motion.div>
           ))}
         </div>
