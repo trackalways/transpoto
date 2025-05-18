@@ -1,6 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
+// Using public directory for static images
+const ctaImage = '/images/cta/cta-bg.jpg';
+const defaultImage = '/images/cta/default.jpg';
 import { FaArrowRight, FaPhone, FaEnvelope, FaClock } from 'react-icons/fa';
 
 export default function CTASection() {
@@ -10,9 +13,12 @@ export default function CTASection() {
       <div className="absolute inset-0 z-0">
         <div className="absolute inset-0 bg-gradient-to-r from-transpoto-800 to-transpoto-900 opacity-90"></div>
         <img 
-          src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
-          alt="Logistics background" 
-          className="w-full h-full object-cover"
+          src={ctaImage}
+          alt="CTA Background"
+          className="w-full h-96 object-cover"
+          onError={(e) => {
+            e.currentTarget.src = defaultImage;
+          }}
         />
       </div>
       

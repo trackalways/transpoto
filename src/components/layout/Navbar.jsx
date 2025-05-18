@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { FaTimes, FaBars, FaChevronDown, FaShip, FaPlane, FaTruck } from 'react-icons/fa';
+import { FaTimes, FaBars, FaChevronDown, FaShip, FaPlane, FaTruck, FaMapMarkerAlt, FaPhone } from 'react-icons/fa';
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -13,6 +13,11 @@ export default function Navbar() {
     { name: 'Home', path: '/' },
     { name: 'About', path: '/about' },
     { 
+      name: 'Track Shipment', 
+      path: '/track-shipment',
+      icon: <FaMapMarkerAlt className="mr-2" />
+    },
+    { 
       name: 'Services', 
       path: '#',
       dropdown: true,
@@ -22,7 +27,7 @@ export default function Navbar() {
         { name: 'Sea Freight', path: '/sea-freight', icon: <FaShip className="mr-2" /> }
       ]
     },
-    { name: 'Contact', path: '/contact' }
+    { name: 'Contact', path: '/contact', icon: <FaPhone className="mr-2" /> }
   ];
 
   // Handle scroll effect for navbar

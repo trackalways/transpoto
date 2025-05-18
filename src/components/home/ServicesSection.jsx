@@ -2,45 +2,50 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { FaTruck, FaPlane, FaShip, FaWarehouse, FaGlobe, FaShieldAlt, FaArrowRight, FaClock, FaBox, FaMapMarkedAlt, FaRoute } from 'react-icons/fa';
 import { motion } from 'framer-motion';
+// Using public directory for static images
+const truckImage = '/images/services/truck.jpg';
+const planeImage = '/images/services/plane.jpg';
+const shipImage = '/images/services/ship.jpg';
+const defaultImage = '/images/services/default.jpg';
 
 const serviceItems = [
   {
-    title: 'Domestic Logistics',
-    description: 'Comprehensive transportation and warehousing solutions across Kenya with real-time tracking.',
+    title: 'Kenya Express',
+    description: 'Fast and reliable delivery service connecting major cities across Kenya',
     icon: <FaTruck className="text-4xl text-transpoto-600" />,
-    link: '/domestic-logistics',
-    bgImage: 'https://images.unsplash.com/photo-1580674285054-bed31e145f59?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    link: '/kenya-express',
+    bgImage: truckImage,
     features: [
-      'Nationwide coverage',
-      'Temperature-controlled transport',
-      'Last-mile delivery',
-      'Warehousing solutions'
+      'Same-day delivery in Nairobi',
+      '24/7 service availability',
+      'Real-time tracking',
+      'Priority handling'
     ]
   },
   {
-    title: 'Air Freight',
-    description: 'Fast and secure global air cargo solutions with customs clearance.',
+    title: 'International Air',
+    description: 'Global air freight solutions with direct flights from Nairobi',
     icon: <FaPlane className="text-4xl text-transpoto-600" />,
-    link: '/air-freight',
-    bgImage: 'https://images.unsplash.com/photo-1552761831-7ef8ec07adbd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    link: '/international-air',
+    bgImage: planeImage,
     features: [
-      'Express shipping',
-      'Dangerous goods handling',
-      'Perishables transport',
-      'Airport-to-door'
+      'Direct flights from Jomo Kenyatta',
+      'Customs clearance',
+      'Perishables',
+      'Dangerous goods'
     ]
   },
   {
-    title: 'Sea Freight',
-    description: 'Cost-effective ocean freight with full container and LCL options.',
+    title: 'Sea Port Solutions',
+    description: 'Mombasa Port operations and container management',
     icon: <FaShip className="text-4xl text-transpoto-600" />,
-    link: '/sea-freight',
-    bgImage: 'https://images.unsplash.com/photo-1610559176044-d0676200dcfb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    link: '/sea-port',
+    bgImage: shipImage,
     features: [
-      'FCL & LCL shipping',
-      'Port handling',
-      'Cargo insurance',
-      'Global network'
+      'Mombasa Port handling',
+      'Container management',
+      'Customs brokerage',
+      'Warehouse services'
     ]
   }
 ];
@@ -134,10 +139,13 @@ export default function ServicesSection() {
                 whileHover={{ y: -8, transition: { duration: 0.3 } }}
               >
                 <div className="h-48 relative overflow-hidden">
-                  <img 
-                    src={service.bgImage} 
+                  <img
+                    src={service.bgImage}
                     alt={service.title}
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                    className="w-full h-48 object-cover rounded-lg"
+                    onError={(e) => {
+                      e.currentTarget.src = defaultImage;
+                    }}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-transpoto-900 to-transparent opacity-70"></div>
                   <div className="absolute bottom-4 left-6 text-white">

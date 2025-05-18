@@ -4,10 +4,10 @@ import { motion } from 'framer-motion';
 import { FaShip, FaPlane, FaTruck, FaArrowRight } from 'react-icons/fa';
 
 const statsData = [
-  { value: '15+', label: 'Years Experience' },
-  { value: '30K+', label: 'Shipments Completed' },
-  { value: '50+', label: 'Countries Served' },
-  { value: '99%', label: 'Satisfied Clients' }
+  { value: '20+', label: 'Years in Kenya' },
+  { value: '50K+', label: 'Shipments in Kenya' },
+  { value: '100+', label: 'Cities Covered' },
+  { value: '98%', label: 'On-Time Deliveries' }
 ];
 
 const StatCounter = ({ value, label }) => {
@@ -36,6 +36,19 @@ const StatCounter = ({ value, label }) => {
 export default function HeroSection() {
   return (
     <section className="bg-transpoto-800 text-white pt-20 pb-12 md:pt-24 md:pb-16 relative overflow-hidden">
+      {/* Kenya Map Background */}
+      <div className="absolute inset-0 z-0 bg-gradient-to-br from-transpoto-900 via-transpoto-800 to-transpoto-700">
+        <motion.div 
+          className="absolute bottom-0 left-0 w-full h-full"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 0.1 }}
+          transition={{ duration: 1 }}
+        >
+          <svg viewBox="0 0 100 100" className="w-full h-full">
+            <path d="M50,50 L80,20 L100,50 L80,80 L50,50" fill="rgba(255,255,255,0.05)"/>
+          </svg>
+        </motion.div>
+      </div>
       {/* Animation Background */}
       <div className="absolute inset-0 z-0 bg-gradient-to-br from-transpoto-900 via-transpoto-800 to-transpoto-700 overflow-hidden">
         {/* Enhanced sun with dynamic glow and rays */}

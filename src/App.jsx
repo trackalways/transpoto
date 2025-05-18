@@ -5,6 +5,7 @@ import DomesticLogistics from './pages/DomesticLogistics';
 import AirFreight from './pages/AirFreight';
 import SeaFreight from './pages/SeaFreight';
 import Contact from './pages/Contact';
+import TrackShipment from './pages/TrackShipment';
 import NotFound from './pages/NotFound';
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
         <Route path="/air-freight" element={<AirFreight />} />
         <Route path="/sea-freight" element={<SeaFreight />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/track-shipment" element={<TrackShipment />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </Router>
