@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import { FaShip, FaPlane, FaTruck, FaArrowRight } from 'react-icons/fa';
 
 const statsData = [
-  { value: '20+', label: 'Years in Kenya' },
+  { value: '20+', label: 'Years in Industry' },
   { value: '50K+', label: 'Shipments in Kenya' },
   { value: '100+', label: 'Cities Covered' },
   { value: '98%', label: 'On-Time Deliveries' }
