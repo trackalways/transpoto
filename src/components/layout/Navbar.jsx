@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { FaTimes, FaBars, FaChevronDown, FaShip, FaPlane, FaTruck, FaMapMarkerAlt, FaPhone } from 'react-icons/fa';
+import { FaTimes, FaBars, FaChevronDown, FaShip, FaPlane, FaTruck, FaMapMarkerAlt, FaPhone, FaEnvelope } from 'react-icons/fa';
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -24,7 +24,8 @@ export default function Navbar() {
       subLinks: [
         { name: 'Domestic Logistics', path: '/domestic-logistics', icon: <FaTruck className="mr-2" /> },
         { name: 'Air Freight', path: '/air-freight', icon: <FaPlane className="mr-2" /> },
-        { name: 'Sea Freight', path: '/sea-freight', icon: <FaShip className="mr-2" /> }
+        { name: 'Sea Freight', path: '/sea-freight', icon: <FaShip className="mr-2" /> },
+        { name: 'Parcel & Document Shipping', path: '/parcel-document-shipping', icon: <FaEnvelope className="mr-2" /> }
       ]
     },
     { name: 'Contact', path: '/contact', icon: <FaPhone className="mr-2" /> }

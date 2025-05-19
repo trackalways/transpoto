@@ -218,9 +218,9 @@ export default function Footer() {
         <div className="border-t border-gray-700 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center text-gray-400">
           <p className="mb-4 md:mb-0">© {currentYear} Transpoto Freight Ltd. All rights reserved.</p>
           <div className="flex flex-wrap justify-center gap-4">
-            <Link to="/about" className="hover:text-transpoto-400 transition-colors">Terms of Service</Link>
+            <Link to="/terms-and-conditions" className="hover:text-transpoto-400 transition-colors">Terms & Conditions</Link>
             <span className="hidden md:inline">|</span>
-            <Link to="/about" className="hover:text-transpoto-400 transition-colors">Privacy Policy</Link>
+            <Link to="/privacy-policy" className="hover:text-transpoto-400 transition-colors">Privacy Policy</Link>
             <span className="hidden md:inline">|</span>
             <Link to="/contact" className="hover:text-transpoto-400 transition-colors">Sitemap</Link>
           </div>
