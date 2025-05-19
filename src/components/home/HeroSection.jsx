@@ -755,11 +755,11 @@ export default function HeroSection() {
             transition={{ duration: 0.8 }}
           >
             {[
-              { icon: FaTruck, label: "Road Freight", desc: "Fast, reliable road transport across Kenya." },
+              { icon: FaTruck, label: "Domestic Freight", desc: "Fast, reliable road transport across Kenya." },
               { icon: FaPlane, label: "Air Freight", desc: "Global air cargo with fast delivery." },
               { icon: FaShip, label: "Sea Freight", desc: "Efficient sea shipping solutions." }
             ].map((service, index) => (
-              <div key={index} className="flex flex-col items-center bg-white/20 rounded-2xl p-8 shadow-xl min-w-[200px] max-w-[260px] md:min-w-[240px] md:max-w-[320px] transition-transform hover:scale-105">
+              <div key={index} className="flex flex-col items-center bg-white/20 rounded-2xl p-8 shadow-xl w-[280px] h-[280px] transition-transform hover:scale-105">
                 <div className="bg-blue-100 rounded-full w-24 h-24 flex items-center justify-center mb-4 shadow-lg">
                   {React.createElement(service.icon, { className: "text-4xl md:text-5xl text-blue-600" })}
                 </div>

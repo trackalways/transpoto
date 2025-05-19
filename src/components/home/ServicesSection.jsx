@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { FaTruck, FaPlane, FaShip, FaWarehouse, FaGlobe, FaShieldAlt, FaArrowRight, FaClock, FaBox, FaMapMarkedAlt, FaRoute } from 'react-icons/fa';
+import { FaTruck, FaPlane, FaShip, FaWarehouse, FaGlobe, FaShieldAlt, FaArrowRight, FaClock, FaBox, FaMapMarkedAlt, FaRoute, FaEnvelope } from 'react-icons/fa';
 import { motion } from 'framer-motion';
 // Using reliable image URLs for services
 const truckImage = 'https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80';
@@ -46,6 +46,19 @@ const serviceItems = [
       'Container management',
       'Customs brokerage',
       'Warehouse services'
+    ]
+  },
+  {
+    title: 'Parcel & Document Shipping',
+    description: 'Secure, fast, and affordable shipping for your important documents and small parcels nationwide and globally. Track your shipment in real-time and enjoy peace of mind with our reliable delivery network.',
+    icon: <FaEnvelope className="text-4xl text-transpoto-600" />,
+    link: '/parcel-document-shipping',
+    bgImage: defaultImage,
+    features: [
+      'Same-day and next-day delivery options',
+      'Real-time tracking and proof of delivery',
+      'Special handling for sensitive documents',
+      'Door-to-door pickup and delivery'
     ]
   }
 ];
@@ -125,7 +138,7 @@ export default function ServicesSection() {
           </motion.div>
 
           <motion.div 
-            className="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-6xl mx-auto"
+            className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-10 gap-y-8 max-w-screen-md mx-auto px-2 xs:px-4"
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
@@ -138,11 +151,11 @@ export default function ServicesSection() {
                 variants={itemVariants}
                 whileHover={{ y: -8, transition: { duration: 0.3 } }}
               >
-                <div className="h-56 relative overflow-hidden">
+                <div className="h-40 xs:h-48 sm:h-56 md:h-56 relative overflow-hidden">
                   <img
                     src={service.bgImage}
                     alt={service.title}
-                    className="w-full h-56 object-cover transition-transform duration-700 transform group-hover:scale-110"
+                    className="w-full h-full object-cover transition-transform duration-700 transform group-hover:scale-110"
                     onError={(e) => {
                       console.log(`Failed to load image for ${service.title}, using default`);
                       e.currentTarget.src = defaultImage;
@@ -154,12 +167,12 @@ export default function ServicesSection() {
                     <div className="p-3 bg-transpoto-600 rounded-full inline-block mb-2">
                       {service.icon}
                     </div>
-                    <h3 className="text-xl font-bold">{service.title}</h3>
+                    <h3 className="text-lg sm:text-xl md:text-2xl font-bold">{service.title}</h3>
                   </div>
                 </div>
 
                 <div className="p-6">
-                  <p className="text-gray-700 mb-5">{service.description}</p>
+                  <p className="text-gray-700 mb-5 text-base sm:text-lg">{service.description}</p>
                   
                   <ul className="mb-6 space-y-2">
                     {service.features.map((feature, i) => (
@@ -183,7 +196,7 @@ export default function ServicesSection() {
                   >
                     <Link 
                       to={service.link} 
-                      className="text-transpoto-600 font-medium inline-flex items-center hover:text-transpoto-700 transition-all duration-300 group"
+                      className="text-transpoto-600 font-medium inline-flex items-center hover:text-transpoto-700 transition-all duration-300 group min-h-[44px] min-w-[44px]"
                     >
                       Learn more
                       <FaArrowRight className="ml-2 transform transition-transform duration-300 group-hover:translate-x-1" />
@@ -213,7 +226,7 @@ export default function ServicesSection() {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 gap-y-8 max-w-screen-md mx-auto px-2 xs:px-4">
             {whyChooseUsItems.map((item, index) => (
               <motion.div
                 key={index}

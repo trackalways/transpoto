@@ -14,13 +14,13 @@ export default function TrackShipmentCTA() {
 
   return (
     <section className="bg-blue-50 py-12">
-      <div className="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-8">
+      <div className="container mx-auto px-2 sm:px-4 flex flex-col md:flex-row items-center justify-between gap-y-6 gap-x-8">
         <div className="flex-1 mb-6 md:mb-0">
-          <h2 className="text-2xl md:text-3xl font-bold text-blue-900 mb-2 flex items-center">
+          <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-blue-900 mb-2 flex items-center">
             <FaBoxOpen className="mr-3 text-blue-600" />
             Track Your Shipment
           </h2>
-          <p className="text-blue-800 text-lg max-w-lg">
+          <p className="text-blue-800 text-base sm:text-lg max-w-lg">
             Enter your tracking number to get real-time updates on your shipment status. Fast, easy, and secure.
           </p>
         </div>

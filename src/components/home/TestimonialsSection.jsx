@@ -161,22 +161,6 @@ export default function TestimonialsSection() {
           </div>
         </div>
 
-        {/* Client Logos */}
-        <div className="mt-16 pt-10 border-t border-gray-200">
-          <h3 className="text-center text-gray-500 mb-8">Trusted by leading companies</h3>
-          <div className="grid grid-cols-2 md:grid-cols-5 gap-8 items-center px-4">
-            {['Code Crumble', 'Encrypted Bug', 'TrackAlways', 'Ola', 'Coco-Cola'].map((company, idx) => (
-              <div 
-                key={company}
-                className="grayscale hover:grayscale-0 transition-all duration-300 opacity-70 hover:opacity-100"
-              >
-                <div className="h-12 flex items-center justify-center">
-                  <span className="text-gray-700 font-semibold">{company}</span>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
       </div>
     </section>
   );
