@@ -2,11 +2,11 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { FaTruck, FaPlane, FaShip, FaWarehouse, FaGlobe, FaShieldAlt, FaArrowRight, FaClock, FaBox, FaMapMarkedAlt, FaRoute } from 'react-icons/fa';
 import { motion } from 'framer-motion';
-// Using public directory for static images
-const truckImage = '/images/services/truck.jpg';
-const planeImage = '/images/services/plane.jpg';
-const shipImage = '/images/services/ship.jpg';
-const defaultImage = '/images/services/default.jpg';
+// Using reliable image URLs for services
+const truckImage = 'https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80';
+const planeImage = 'https://images.unsplash.com/photo-1568332343886-366cc6ce8e41?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80';
+const shipImage = 'https://images.unsplash.com/photo-1566466880166-c78fad4a2b0f?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80';
+const defaultImage = 'https://images.unsplash.com/photo-1566153580922-19f62a3dcdea?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80';
 
 const serviceItems = [
   {
@@ -125,7 +125,7 @@ export default function ServicesSection() {
           </motion.div>
 
           <motion.div 
-            className="grid grid-cols-1 md:grid-cols-3 gap-10"
+            className="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-6xl mx-auto"
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
@@ -138,14 +138,16 @@ export default function ServicesSection() {
                 variants={itemVariants}
                 whileHover={{ y: -8, transition: { duration: 0.3 } }}
               >
-                <div className="h-48 relative overflow-hidden">
+                <div className="h-56 relative overflow-hidden">
                   <img
                     src={service.bgImage}
                     alt={service.title}
-                    className="w-full h-48 object-cover rounded-lg"
+                    className="w-full h-56 object-cover transition-transform duration-700 transform group-hover:scale-110"
                     onError={(e) => {
+                      console.log(`Failed to load image for ${service.title}, using default`);
                       e.currentTarget.src = defaultImage;
                     }}
+                    loading="lazy"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-transpoto-900 to-transparent opacity-70"></div>
                   <div className="absolute bottom-4 left-6 text-white">

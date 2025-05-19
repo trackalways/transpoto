@@ -723,98 +723,64 @@ export default function HeroSection() {
 
       {/* Semi-transparent overlay for better text readability */}
       <div className="absolute inset-0 bg-gradient-to-r from-transpoto-900/80 to-transpoto-800/60 z-10"></div>
-      
-      <div className="container mx-auto px-4 relative z-20">
-        <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
+           <div className="container mx-auto px-4 relative z-20">
+        <div className="grid md:grid-cols-2 gap-12 items-center min-h-[500px]">
+          {/* Left: Headline & description */}
+          <div className="flex flex-col items-center md:items-start text-center md:text-left gap-6">
+            <motion.h1 
+              className="text-4xl md:text-6xl font-bold leading-tight"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+            >
+              <span className="block text-blue-300 text-lg md:text-xl font-semibold mb-2 tracking-widest">SEAMLESS SHIPPING. WORLDWIDE</span>
+              <span className="block">Transpoto Freight Ltd</span>
+            </motion.h1>
+            <motion.p 
+              className="text-lg md:text-xl text-blue-100 mb-2 max-w-xl"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+            >
+              Transpoto Freight Ltd is a dynamic and reliable logistics company headquartered in Nairobi, Kenya, with a global reach and a strong local presence. We specialize in providing end-to-end freight forwarding and logistics solutions through air freight, sea shipping, and domestic transportation services within Kenya. We are committed to excellence, offering personalized service and ensuring every shipment arrives safely, on time, and cost-effectively — wherever in the world it needs to go.
+            </motion.p>
+
+            <Link to="/contact" className="inline-block px-8 py-3 mt-2 rounded-lg bg-blue-600 hover:bg-blue-700 text-white font-semibold shadow-lg transition-all">Contact Us</Link>
+          </div>
+          {/* Right: Services - Large Boxes, No Outer Card */}
           <motion.div 
-            className="lg:max-w-2xl w-full"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
+            className="flex flex-col md:flex-row gap-8 justify-center items-center w-full"
+            initial={{ opacity: 0, x: 40 }}
+            animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <motion.h1 
-              className="text-4xl md:text-5xl xl:text-6xl font-bold mb-6"
-              initial={{ opacity: 0, y: -20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7 }}
-            >
-              <span className="block mb-2">Global Logistics</span>
-              <span className="block text-blue-300">Simplified</span>
-            </motion.h1>
-            
-            <motion.p 
-              className="text-xl md:text-2xl mb-8 text-gray-100 max-w-2xl leading-relaxed"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2, duration: 0.7 }}
-            >
-              Your trusted logistics partner with global reach. We deliver efficient freight and transportation solutions for businesses worldwide.
-            </motion.p>
-            
-            <div className="flex flex-col sm:flex-row gap-4 mb-10">
-              <motion.div 
-                whileHover={{ scale: 1.03 }} 
-                whileTap={{ scale: 0.97 }}
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 0.4, duration: 0.5 }}
-              >
-                <Link 
-                  to="/contact" 
-                  className="bg-white text-transpoto-800 px-6 py-3 rounded-md font-semibold hover:bg-gray-100 transition-colors text-center block flex items-center justify-center shadow-lg"
-                >
-                  Request a Quote <FaArrowRight className="ml-2" />
-                </Link>
-              </motion.div>
-              <motion.div 
-                whileHover={{ scale: 1.03 }} 
-                whileTap={{ scale: 0.97 }}
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 0.5, duration: 0.5 }}
-              >
-                <Link 
-                  to="/domestic-logistics" 
-                  className="border-2 border-transpoto-400 text-white px-6 py-3 rounded-md font-semibold hover:bg-transpoto-700 hover:border-transpoto-500 transition-all text-center block"
-                >
-                  Our Services
-                </Link>
-              </motion.div>
-            </div>
+            {[
+              { icon: FaTruck, label: "Road Freight", desc: "Fast, reliable road transport across Kenya." },
+              { icon: FaPlane, label: "Air Freight", desc: "Global air cargo with fast delivery." },
+              { icon: FaShip, label: "Sea Freight", desc: "Efficient sea shipping solutions." }
+            ].map((service, index) => (
+              <div key={index} className="flex flex-col items-center bg-white/20 rounded-2xl p-8 shadow-xl min-w-[200px] max-w-[260px] md:min-w-[240px] md:max-w-[320px] transition-transform hover:scale-105">
+                <div className="bg-blue-100 rounded-full w-24 h-24 flex items-center justify-center mb-4 shadow-lg">
+                  {React.createElement(service.icon, { className: "text-4xl md:text-5xl text-blue-600" })}
+                </div>
+                <div className="font-bold text-2xl text-blue-50 mb-2 text-center">{service.label}</div>
+                <div className="text-blue-100 text-base text-center">{service.desc}</div>
+              </div>
+            ))}
           </motion.div>
         </div>
-        
-        {/* Service icons - adjusted for reduced hero section */}
-        <div className="grid grid-cols-3 gap-5 md:gap-10 max-w-3xl mx-auto mt-14 mb-12 relative z-20">
-          {[
-            { icon: FaTruck, label: "Road Freight" },
-            { icon: FaPlane, label: "Air Freight" },
-            { icon: FaShip, label: "Sea Freight" }
-          ].map((service, index) => (
-            <motion.div
-              key={index}
-              className="text-center"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.6 + (index * 0.1), duration: 0.5 }}
-            >
-              <div className="bg-transpoto-700 mx-auto rounded-full w-24 h-24 md:w-28 md:h-28 flex items-center justify-center mb-4 shadow-lg">
-                <service.icon className="text-4xl md:text-5xl text-blue-300" />
-              </div>
-              <p className="text-lg md:text-xl font-medium">{service.label}</p>
-            </motion.div>
-          ))}
-        </div>
-        
-        {/* Stats */}
+        {/* Stats Bar */}
         <motion.div 
-          className="flex flex-wrap justify-around mt-8 pt-8 border-t border-transpoto-600/50 gap-6"
+          className="mt-14 md:mt-20 w-full max-w-5xl mx-auto rounded-xl bg-white/10 backdrop-blur-md shadow-lg flex flex-col md:flex-row justify-between items-center px-4 md:px-10 py-6 gap-8 border border-white/20"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.8, duration: 0.8 }}
         >
           {statsData.map((stat, index) => (
-            <StatCounter key={index} value={stat.value} label={stat.label} />
+            <div className="flex-1 min-w-[120px] flex flex-col items-center" key={index}>
+              <div className="text-3xl md:text-4xl font-bold text-white mb-1 drop-shadow-lg">{stat.value}</div>
+              <div className="text-base text-blue-100 font-medium">{stat.label}</div>
+            </div>
           ))}
         </motion.div>
       </div>

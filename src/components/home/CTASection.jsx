@@ -116,7 +116,7 @@ export default function CTASection() {
                       <FaPhone className="text-transpoto-600 mr-3" />
                       <span className="font-medium">Call Us</span>
                     </div>
-                    <span>+254 700 123 456</span>
+                    <span>+254 794564808</span>
                   </div>
                   
                   <div className="flex items-center justify-between bg-white p-4 rounded-md shadow-sm">
@@ -124,7 +124,7 @@ export default function CTASection() {
                       <FaEnvelope className="text-transpoto-600 mr-3" />
                       <span className="font-medium">Email</span>
                     </div>
-                    <span>info@transpoto.com</span>
+                    <span>sales@transpotofreight.com</span>
                   </div>
                   
                   <motion.div 
