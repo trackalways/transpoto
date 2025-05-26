@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import logoImage from '/transpoto-logo-dark.png'; // Direct import
 import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FaTimes, FaBars, FaChevronDown, FaShip, FaPlane, FaTruck, FaMapMarkerAlt, FaPhone, FaEnvelope } from 'react-icons/fa';
@@ -53,19 +54,14 @@ export default function Navbar() {
   
 
   return (
-    <header className={`w-full fixed top-0 left-0 z-[1000] transition-all duration-300 ${isScrolled ? 'bg-white shadow-md py-2' : 'bg-white/95 py-4'}`}>
+    <header className="w-full fixed top-0 left-0 z-[1000] transition-all duration-300 bg-white shadow-md py-4">
       <div className="container mx-auto px-4 flex justify-between items-center">
         {/* Logo */}
-        <Link to="/" className="flex items-center">
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5 }}
-          >
-            <span className="text-2xl font-bold text-transpoto-700">Transpoto</span>
-            <span className="text-2xl font-light text-transpoto-600"> Freight</span>
-          </motion.div>
-        </Link>
+        <div style={{ width: '350px', display: 'flex', alignItems: 'center' }}>
+          <Link to="/">
+            <div style={{ width: '350px', height: '70px', backgroundImage: 'url(/transpoto-logo-dark.png)', backgroundSize: 'contain', backgroundRepeat: 'no-repeat', backgroundPosition: 'left center' }}></div>
+          </Link>
+        </div>
 
 
 
