@@ -15,21 +15,21 @@ export default function Footer() {
     <footer className="bg-gradient-to-b from-gray-800 to-gray-900 text-white pt-16 pb-8 relative overflow-hidden">
       {/* Background pattern */}
       <div className="absolute inset-0 overflow-hidden opacity-5">
-        <div className="absolute -top-20 -right-20 w-80 h-80 rounded-full border-8 border-transpoto-500"></div>
+        <div className="absolute -top-20 -right-20 w-80 h-80 rounded-full border-8 border-blue-500"></div>
         <div className="absolute top-40 left-10 w-40 h-40 rounded-full border-4 border-blue-400"></div>
-        <div className="absolute bottom-20 right-40 w-60 h-60 rounded-full border-4 border-blue-500"></div>
+        <div className="absolute bottom-20 right-40 w-60 h-60 rounded-full border-4 border-accent-500"></div>
       </div>
       
       <div className="container mx-auto px-4 relative z-10">
         {/* Top section with newsletter */}
-        <div className="bg-gradient-to-r from-transpoto-700 to-transpoto-800 p-8 rounded-xl shadow-xl mb-16 relative overflow-hidden">
-          <div className="absolute top-0 right-0 transform translate-x-1/4 -translate-y-1/4 w-64 h-64 bg-transpoto-600 rounded-full opacity-20"></div>
-          <div className="absolute bottom-0 left-0 transform -translate-x-1/4 translate-y-1/4 w-64 h-64 bg-blue-500 rounded-full opacity-20"></div>
+        <div className="bg-gradient-to-r from-blue-700 to-blue-800 p-8 rounded-xl shadow-xl mb-16 relative overflow-hidden">
+          <div className="absolute top-0 right-0 transform translate-x-1/4 -translate-y-1/4 w-64 h-64 bg-blue-600 rounded-full opacity-20"></div>
+          <div className="absolute bottom-0 left-0 transform -translate-x-1/4 translate-y-1/4 w-64 h-64 bg-accent-500 rounded-full opacity-20"></div>
           
           <div className="grid md:grid-cols-5 gap-8 items-center relative">
             <div className="md:col-span-3">
               <motion.h3 
-                className="text-2xl font-bold mb-4"
+                className="text-2xl font-bold mb-4 font-display"
                 initial={{ opacity: 0, y: -10 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -58,10 +58,10 @@ export default function Footer() {
                 <input 
                   type="email" 
                   placeholder="Your email address" 
-                  className="px-4 py-3 rounded-md focus:outline-none focus:ring-2 focus:ring-transpoto-500 bg-white/90 text-gray-800 w-full"
+                  className="px-4 py-3 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500 bg-white/90 text-gray-800 w-full"
                 />
                 <motion.button 
-                  className="px-5 py-3 bg-transpoto-600 hover:bg-transpoto-700 transition-colors rounded-md font-medium whitespace-nowrap flex items-center justify-center"
+                  className="px-5 py-3 bg-orange-500 hover:bg-orange-600 transition-colors rounded-md font-medium whitespace-nowrap flex items-center justify-center font-display"
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                 >
@@ -83,11 +83,11 @@ export default function Footer() {
             transition={{ duration: 0.5 }}
           >
             <div className="mb-6">
-              <h3 className="text-2xl font-bold mb-2">
+              <h3 className="text-2xl font-bold mb-2 font-display">
                 <span className="text-white">Transpoto</span>
-                <span className="text-blue-400 font-light"> Freight</span>
+                <span className="text-orange-400 font-light"> Freight</span>
               </h3>
-              <div className="w-12 h-1 bg-transpoto-500 mb-4"></div>
+              <div className="w-12 h-1 bg-orange-500 mb-4"></div>
             </div>
             <p className="text-gray-300 mb-6">
               Your trusted logistics partner in Kenya with global reach. We provide comprehensive freight solutions for businesses of all sizes.  
@@ -99,7 +99,7 @@ export default function Footer() {
                   href="#" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="bg-gray-700 text-gray-300 hover:text-white hover:bg-transpoto-600 p-2 rounded-full transition-colors"
+                  className="bg-gray-700 text-gray-300 hover:text-white hover:bg-blue-600 p-2 rounded-full transition-colors"
                   whileHover={{ y: -3 }}
                   transition={{ duration: 0.3 }}
                 >
@@ -118,7 +118,7 @@ export default function Footer() {
             transition={{ duration: 0.5, delay: 0.1 }}
           >
             <h4 className="text-lg font-semibold mb-6 relative">
-              <span className="border-b-2 border-transpoto-500 pb-1">Our Services</span>
+              <span className="border-b-2 border-blue-600 pb-1">Our Services</span>
             </h4>
             <ul className="space-y-3">
               {[
@@ -133,7 +133,7 @@ export default function Footer() {
                     to={item.path} 
                     className="text-gray-400 hover:text-white flex items-center group transition-all duration-300"
                   >
-                    <span className="mr-2 text-transpoto-500 group-hover:text-transpoto-400">{item.icon}</span>
+                    <span className="mr-2 text-blue-500 group-hover:text-blue-400">{item.icon}</span>
                     <span className="group-hover:translate-x-1 transition-transform duration-300">{item.name}</span>
                   </Link>
                 </li>
@@ -150,7 +150,7 @@ export default function Footer() {
             transition={{ duration: 0.5, delay: 0.2 }}
           >
             <h4 className="text-lg font-semibold mb-6 relative">
-              <span className="border-b-2 border-transpoto-500 pb-1">Quick Links</span>
+              <span className="border-b-2 border-blue-600 pb-1">Quick Links</span>
             </h4>
             <div className="grid grid-cols-1 gap-3">
               {[
@@ -181,23 +181,23 @@ export default function Footer() {
             transition={{ duration: 0.5, delay: 0.3 }}
           >
             <h4 className="text-lg font-semibold mb-6 relative">
-              <span className="border-b-2 border-transpoto-500 pb-1">Contact Us</span>
+              <span className="border-b-2 border-blue-600 pb-1">Contact Us</span>
             </h4>
             <address className="text-gray-400 not-italic space-y-4">
               <div className="flex items-start">
-                <FaMapMarkerAlt className="text-transpoto-500 mt-1 mr-3 flex-shrink-0" />
+                <FaMapMarkerAlt className="text-blue-500 mt-1 mr-3 flex-shrink-0" />
                 <p>5th floor, Kalson Towers, Crescent Road, Parklands, Nairobi</p>
               </div>
               <div className="flex items-center">
-                <FaPhone className="text-transpoto-500 mr-3 flex-shrink-0" />
+                <FaPhone className="text-blue-500 mr-3 flex-shrink-0" />
                 <p>+254 794564808</p>
               </div>
               <div className="flex items-center">
-                <FaEnvelope className="text-transpoto-500 mr-3 flex-shrink-0" />
+                <FaEnvelope className="text-blue-500 mr-3 flex-shrink-0" />
                 <p>sales@transpotofreight.com</p>
               </div>
               <div className="flex items-center">
-                <FaGlobe className="text-transpoto-500 mr-3 flex-shrink-0" />
+                <FaGlobe className="text-blue-500 mr-3 flex-shrink-0" />
                 <p>www.transpotofreight.com</p>
               </div>
               

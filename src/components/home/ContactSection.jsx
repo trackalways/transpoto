@@ -71,9 +71,9 @@ export default function ContactSection() {
     <section id="contact" className="py-16 bg-gray-50">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-gray-900 mb-4">Get In Touch</h2>
+          <h2 className="text-3xl font-bold text-brand-black-900 mb-4 font-display">Get In Touch</h2>
           <div className="w-20 h-1 bg-blue-600 mx-auto mb-6"></div>
-          <p className="text-gray-600 max-w-2xl mx-auto">
+          <p className="text-gray-600 max-w-2xl mx-auto font-sans">
             Have questions or need assistance? Our team is here to help you with all your logistics needs.
           </p>
         </div>
@@ -93,12 +93,12 @@ export default function ContactSection() {
                     {item.icon}
                   </div>
                   <div>
-                    <h3 className="text-lg font-semibold text-gray-900 mb-1">{item.title}</h3>
+                    <h3 className="text-lg font-semibold text-brand-black-900 mb-1 font-display">{item.title}</h3>
                     <a 
                       href={item.link} 
                       target={item.target || '_self'} 
                       rel={item.target === '_blank' ? 'noopener noreferrer' : ''}
-                      className="text-gray-600 hover:text-blue-600 transition-colors"
+                      className="text-gray-600 hover:text-blue-600 transition-colors font-sans"
                     >
                       {item.text}
                     </a>
@@ -108,8 +108,8 @@ export default function ContactSection() {
             ))}
             
             {/* Map */}
-            <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-100 overflow-hidden">
-              <h3 className="text-lg font-semibold text-gray-900 mb-4">Our Location</h3>
+            <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-100 overflow-hidden hover:shadow-md transition-shadow duration-300">
+              <h3 className="text-lg font-semibold text-brand-black-900 mb-4 font-display">Our Location</h3>
               <div className="aspect-w-16 aspect-h-9 rounded-md overflow-hidden">
                 <iframe
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.808227238531!2d36.82115991533091!3d-1.2923607359772302!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f10dffd7c8b9f%3A0x7f3f3f3f3f3f3f3f!2sNairobi%2C%20Kenya!5e0!3m2!1sen!2ske!4v1620000000000!5m2!1sen!2ske"
@@ -125,8 +125,8 @@ export default function ContactSection() {
           </div>
 
           {/* Contact Form */}
-          <div className="bg-white p-8 rounded-xl shadow-sm border border-gray-100">
-            <h3 className="text-2xl font-bold text-gray-900 mb-6">Send Us a Message</h3>
+          <div className="bg-white p-8 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow duration-300">
+            <h3 className="text-2xl font-bold text-brand-black-900 mb-6 font-display">Send Us a Message</h3>
             
             {isSubmitted ? (
               <motion.div 
@@ -145,7 +145,7 @@ export default function ContactSection() {
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
-                    <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
+                    <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1 font-sans">
                       Your Name <span className="text-red-500">*</span>
                     </label>
                     <input
@@ -159,7 +159,7 @@ export default function ContactSection() {
                     />
                   </div>
                   <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
+                    <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1 font-sans">
                       Email Address <span className="text-red-500">*</span>
                     </label>
                     <input
@@ -176,7 +176,7 @@ export default function ContactSection() {
                 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
-                    <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1">
+                    <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1 font-sans">
                       Phone Number
                     </label>
                     <input
@@ -189,7 +189,7 @@ export default function ContactSection() {
                     />
                   </div>
                   <div>
-                    <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-1">
+                    <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-1 font-sans">
                       Subject <span className="text-red-500">*</span>
                     </label>
                     <select
@@ -211,7 +211,7 @@ export default function ContactSection() {
                 </div>
                 
                 <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
+                  <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1 font-sans">
                     Your Message <span className="text-red-500">*</span>
                   </label>
                   <textarea
@@ -229,7 +229,7 @@ export default function ContactSection() {
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-6 rounded-md transition-colors duration-300 flex items-center justify-center"
+                    className="w-full bg-orange-500 text-white py-3 px-6 rounded-md hover:bg-orange-600 transition-all duration-300 flex items-center justify-center gap-2 font-medium disabled:opacity-70 disabled:cursor-not-allowed font-display hover:-translate-y-1"
                   >
                     {isSubmitting ? (
                       'Sending...'

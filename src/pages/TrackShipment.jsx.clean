@@ -22,7 +22,11 @@ import {
   FaHeadset,
   FaUserClock,
   FaHistory,
-  FaCalendarAlt
+  FaCalendarAlt,
+  FaClipboardCheck,
+  FaWeightHanging,
+  FaQuestionCircle,
+  FaDollarSign
 } from 'react-icons/fa';
 import { BsBoxSeam, BsTruck, BsClockHistory, BsArrowRight } from 'react-icons/bs';
 
@@ -32,6 +36,9 @@ const TrackShipment = () => {
   const [error, setError] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [activeTab, setActiveTab] = useState('details');
+  const [estimatedDelivery, setEstimatedDelivery] = useState('2025-05-28T18:00:00');
+  const [viewFullHistory, setViewFullHistory] = useState(false);
+  const [showFaq, setShowFaq] = useState(false);
   const [activeQuestion, setActiveQuestion] = useState(null);
   const resultRef = useRef(null);
   
@@ -395,26 +402,6 @@ const TrackShipment = () => {
                       <span>Destination</span>
                     </div>
                   </div>
-                </div>
-                
-                {/* Main Content with Tabs */}
-                <div className="p-6">
-                  <div className="border-b border-gray-200 mb-6">
-                    <div className="flex space-x-6">
-                      <button
-                        onClick={() => setActiveTab('details')}
-                        className={`pb-3 font-medium font-display text-sm transition-colors ${activeTab === 'details' ? 'text-blue-600 border-b-2 border-blue-600' : 'text-gray-500 hover:text-gray-700'}`}
-                      >
-                        Shipment Details
-                      </button>
-                      <button
-                        onClick={() => setActiveTab('history')}
-                        className={`pb-3 font-medium font-display text-sm transition-colors ${activeTab === 'history' ? 'text-blue-600 border-b-2 border-blue-600' : 'text-gray-500 hover:text-gray-700'}`}
-                      >
-                        Tracking History
-                      </button>
-                    </div>
-                  </div>
                   
                   {/* Shipment Details Tab Content */}
                   {activeTab === 'details' && (
@@ -685,3 +672,7 @@ const TrackShipment = () => {
 };
 
 export default TrackShipment;
+                
+                {/* Main Content with Tabs */}
+                <div className="p-6">
+                  <div className="border-b border-gray-200 mb-6">

@@ -5,7 +5,7 @@ import { FaShip, FaPlane, FaTruck, FaArrowRight } from 'react-icons/fa';
 
 const statsData = [
   { value: '20+', label: 'Years in Industry' },
-  { value: '50K+', label: 'Shipments in Kenya' },
+  { value: '50K+', label: 'Shipments worldwide' },
   { value: '100+', label: 'Cities Covered' },
   { value: '98%', label: 'On-Time Deliveries' }
 ];
@@ -35,9 +35,9 @@ const StatCounter = ({ value, label }) => {
 
 export default function HeroSection() {
   return (
-    <section className="bg-transpoto-800 text-white pt-20 pb-12 md:pt-24 md:pb-16 relative overflow-hidden">
+    <section className="bg-blue-800 text-white pt-20 pb-12 md:pt-24 md:pb-16 relative overflow-hidden">
       {/* Kenya Map Background */}
-      <div className="absolute inset-0 z-0 bg-gradient-to-br from-transpoto-900 via-transpoto-800 to-transpoto-700">
+      <div className="absolute inset-0 z-0 bg-gradient-to-br from-blue-900 via-blue-800 to-blue-700">
         <motion.div 
           className="absolute bottom-0 left-0 w-full h-full"
           initial={{ opacity: 0 }}
@@ -722,18 +722,18 @@ export default function HeroSection() {
       </div>
 
       {/* Semi-transparent overlay for better text readability */}
-      <div className="absolute inset-0 bg-gradient-to-r from-transpoto-900/80 to-transpoto-800/60 z-10"></div>
+      <div className="absolute inset-0 bg-gradient-to-r from-brand-black-900/90 via-blue-800/70 to-orange-700/60 z-10"></div>
            <div className="container mx-auto px-4 relative z-20">
         <div className="grid md:grid-cols-2 gap-12 items-center min-h-[500px]">
           {/* Left: Headline & description */}
           <div className="flex flex-col items-center md:items-start text-center md:text-left gap-6">
             <motion.h1 
-              className="text-4xl md:text-6xl font-bold leading-tight"
+              className="text-4xl md:text-6xl font-bold leading-tight font-display"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
             >
-              <span className="block text-blue-300 text-lg md:text-xl font-semibold mb-2 tracking-widest">SEAMLESS SHIPPING. WORLDWIDE</span>
+              <span className="block text-blue-100 text-lg md:text-2xl font-extrabold mb-4 tracking-widest">SEAMLESS SHIPPING WORLDWIDE</span>
               <span className="block">Transpoto Freight Ltd</span>
             </motion.h1>
             <motion.p 
@@ -745,7 +745,7 @@ export default function HeroSection() {
               Transpoto Freight Ltd is a dynamic and reliable logistics company headquartered in Nairobi, Kenya, with a global reach and a strong local presence. We specialize in providing end-to-end freight forwarding and logistics solutions through air freight, sea shipping, and domestic transportation services within Kenya. We are committed to excellence, offering personalized service and ensuring every shipment arrives safely, on time, and cost-effectively — wherever in the world it needs to go.
             </motion.p>
 
-            <Link to="/contact" className="inline-block px-8 py-3 mt-2 rounded-lg bg-blue-600 hover:bg-blue-700 text-white font-semibold shadow-lg transition-all">Contact Us</Link>
+            <Link to="/contact" className="inline-block px-8 py-3 mt-2 rounded-lg bg-orange-500 hover:bg-orange-600 text-white font-semibold shadow-lg transition-all font-display">Contact Us</Link>
           </div>
           {/* Right: Services - Large Boxes, No Outer Card */}
           <motion.div 
@@ -763,8 +763,8 @@ export default function HeroSection() {
                 <div className="bg-blue-100 rounded-full w-24 h-24 flex items-center justify-center mb-4 shadow-lg">
                   {React.createElement(service.icon, { className: "text-4xl md:text-5xl text-blue-600" })}
                 </div>
-                <div className="font-bold text-2xl text-blue-50 mb-2 text-center">{service.label}</div>
-                <div className="text-blue-100 text-base text-center">{service.desc}</div>
+                <div className="font-bold text-2xl text-white mb-2 text-center font-display">{service.label}</div>
+                <div className="text-blue-50 text-base text-center">{service.desc}</div>
               </div>
             ))}
           </motion.div>
@@ -778,7 +778,7 @@ export default function HeroSection() {
         >
           {statsData.map((stat, index) => (
             <div className="flex-1 min-w-[120px] flex flex-col items-center" key={index}>
-              <div className="text-3xl md:text-4xl font-bold text-white mb-1 drop-shadow-lg">{stat.value}</div>
+              <div className="text-3xl md:text-4xl font-bold text-orange-300 mb-1 drop-shadow-lg font-display">{stat.value}</div>
               <div className="text-base text-blue-100 font-medium">{stat.label}</div>
             </div>
           ))}
