@@ -13,8 +13,12 @@ export default function Home() {
       <Navbar />
       <main className="flex-grow">
         <HeroSection />
-        <TrackShipmentCTA />
-        <TestimonialsSection />
+        <div className="bg-gray-50">
+          <TrackShipmentCTA />
+          <div className="pt-0 mt-0">
+            <TestimonialsSection />
+          </div>
+        </div>
         <CTASection />
       </main>
 

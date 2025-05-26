@@ -44,8 +44,8 @@ const TestimonialCard = ({ testimonial }) => (
         />
       </div>
       <div>
-        <h4 className="font-semibold text-gray-900">{testimonial.name}</h4>
-        <p className="text-blue-600 text-sm">{testimonial.position}</p>
+        <h4 className="font-semibold text-gray-900 font-display">{testimonial.name}</h4>
+        <p className="text-orange-500 text-sm font-medium">{testimonial.position}</p>
         <p className="text-gray-500 text-sm">{testimonial.company}</p>
       </div>
     </div>
@@ -58,7 +58,7 @@ const TestimonialCard = ({ testimonial }) => (
       ))}
     </div>
     <div className="relative flex-grow">
-      <FaQuoteLeft className="text-blue-100 text-4xl absolute -top-2 -left-2" />
+      <FaQuoteLeft className="text-blue-200 text-4xl absolute -top-2 -left-2" />
       <p className="text-gray-600 relative z-10">{testimonial.quote}</p>
     </div>
   </div>
@@ -102,10 +102,10 @@ export default function TestimonialsSection() {
   };
 
   return (
-    <section className="py-16 bg-gray-50">
+    <section className="pb-16 bg-gray-50 mt-0 border-t-0" style={{ marginTop: 0 }}>
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-gray-900 mb-4">What Our Clients Say</h2>
+          <h2 className="text-3xl font-bold text-gray-900 mb-4 font-display">What Our Clients Say</h2>
           <div className="w-20 h-1 bg-blue-600 mx-auto mb-6"></div>
           <p className="text-gray-600 max-w-2xl mx-auto">
             Don't just take our word for it. Here's what our clients have to say about our services.
@@ -137,7 +137,7 @@ export default function TestimonialsSection() {
                     setCurrentIndex(index);
                   }}
                   className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                    index === currentIndex ? 'bg-blue-600 w-8' : 'bg-gray-300 hover:bg-blue-400'
+                    index === currentIndex ? 'bg-blue-600 w-8' : 'bg-gray-300 hover:bg-blue-300'
                   }`}
                   aria-label={`Go to testimonial ${index + 1}`}
                 />
@@ -146,14 +146,14 @@ export default function TestimonialsSection() {
             
             <button 
               onClick={prevTestimonial}
-              className="absolute left-0 top-1/2 -translate-y-1/2 -ml-4 bg-white p-2 rounded-full shadow-md text-blue-600 hover:bg-blue-50 transition-colors"
+              className="absolute left-0 top-1/2 -translate-y-1/2 -ml-4 bg-white p-2 rounded-full shadow-md text-blue-600 hover:bg-blue-50 transition-colors hover:scale-110"
               aria-label="Previous testimonial"
             >
               <FaChevronLeft />
             </button>
             <button 
               onClick={nextTestimonial}
-              className="absolute right-0 top-1/2 -translate-y-1/2 -mr-4 bg-white p-2 rounded-full shadow-md text-blue-600 hover:bg-blue-50 transition-colors"
+              className="absolute right-0 top-1/2 -translate-y-1/2 -mr-4 bg-white p-2 rounded-full shadow-md text-blue-600 hover:bg-blue-50 transition-colors hover:scale-110"
               aria-label="Next testimonial"
             >
               <FaChevronRight />

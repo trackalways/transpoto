@@ -19,15 +19,22 @@ export default function Contact() {
       
       <main className="flex-grow">
         {/* Hero Section */}
-        <section className="bg-gradient-to-r from-blue-700 to-blue-900 text-white py-20">
-          <div className="container mx-auto px-4 text-center">
-            <span className="block text-blue-200 text-base md:text-lg font-semibold mb-2 tracking-widest">SEAMLESS SHIPPING. WORLDWIDE</span>
-            <h1 className="text-4xl md:text-5xl font-bold mb-4">Contact Us</h1>
-            <span className="block text-xl font-semibold mb-2">Transpoto Freight Ltd</span>
-            <p className="text-xl text-blue-100 max-w-3xl mx-auto">
+        <section className="relative bg-gradient-to-r from-blue-800 to-blue-900 text-white pt-28 pb-16 overflow-hidden">
+          <div className="absolute inset-0 opacity-20">
+            <div className="absolute inset-0 bg-pattern bg-repeat opacity-10"></div>
+          </div>
+          <div className="container mx-auto px-4 relative z-10 text-center">
+            <span className="block text-blue-200 text-base md:text-lg font-semibold mb-2 tracking-widest font-sans">SEAMLESS SHIPPING. WORLDWIDE</span>
+            <h1 className="text-4xl md:text-5xl font-bold mb-4 font-display">Contact Us</h1>
+            <span className="block text-xl font-semibold mb-2 font-display">Transpoto Freight Ltd</span>
+            <p className="text-xl text-blue-100 max-w-3xl mx-auto font-sans">
               Transpoto Freight Ltd is headquartered in Nairobi, Kenya, and serves clients worldwide. Reach out to us for all your freight, shipping, and logistics needs. Our team is dedicated to providing prompt and reliable support.
             </p>
+            <div className="w-20 h-1 bg-orange-500 mx-auto mt-6"></div>
           </div>
+          <svg className="absolute bottom-0 left-0 w-full text-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 100" preserveAspectRatio="none">
+            <path fill="currentColor" d="M0,64L80,58.7C160,53,320,43,480,48C640,53,800,75,960,80C1120,85,1280,75,1360,69.3L1440,64L1440,100L1360,100C1280,100,1120,100,960,100C800,100,640,100,480,100C320,100,160,100,80,100L0,100Z"></path>
+          </svg>
         </section>
         
         {/* Contact Section */}
@@ -37,17 +44,18 @@ export default function Contact() {
         <section className="bg-gray-50 py-16">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto text-center">
-              <h2 className="text-3xl font-bold text-gray-900 mb-6">Need Immediate Assistance?</h2>
-              <p className="text-gray-600 text-lg mb-8">
+              <h2 className="text-3xl font-bold text-brand-black-900 mb-6 font-display">Need Immediate Assistance?</h2>
+              <div className="w-20 h-1 bg-blue-600 mx-auto mb-8"></div>
+              <p className="text-gray-600 text-lg mb-8 font-sans">
                 Our customer support team is available 24/7 to help you with any inquiries or urgent matters.<br />
-                <strong>Phone:</strong> <a href="tel:+254794564808" className="text-blue-700 hover:underline">+254 794564808</a><br />
-                <strong>Email:</strong> <a href="mailto:sales@transpotofreight.com" className="text-blue-700 hover:underline">sales@transpotofreight.com</a><br />
+                <strong>Phone:</strong> <a href="tel:+254794564808" className="text-blue-600 hover:text-blue-800 transition-colors">+254 794564808</a><br />
+                <strong>Email:</strong> <a href="mailto:sales@transpotofreight.com" className="text-blue-600 hover:text-blue-800 transition-colors">sales@transpotofreight.com</a><br />
                 <strong>Address:</strong> 5th floor, Kalson Towers, Crescent Road, Parklands, Nairobi
               </p>
               <div className="flex flex-col sm:flex-row justify-center gap-6">
                 <a 
-                  href="tel:+254700123456" 
-                  className="bg-white px-8 py-4 rounded-lg shadow-md hover:shadow-lg transition-shadow flex items-center justify-center gap-2 text-blue-600 font-medium"
+                  href="tel:+254794564808" 
+                  className="bg-white px-8 py-4 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 flex items-center justify-center gap-2 text-blue-600 font-medium border border-blue-100 hover:-translate-y-1 font-display"
                 >
                   <span>Call Us Now</span>
                   <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -56,7 +64,7 @@ export default function Contact() {
                 </a>
                 <a 
                   href="mailto:sales@transpotofreight.com" 
-                  className="bg-blue-600 text-white px-8 py-4 rounded-lg shadow-md hover:bg-blue-700 transition-colors flex items-center justify-center gap-2 font-medium"
+                  className="bg-orange-500 text-white px-8 py-4 rounded-lg shadow-md hover:bg-orange-600 transition-all duration-300 flex items-center justify-center gap-2 font-medium hover:-translate-y-1 font-display"
                 >
                   <span>Email Support</span>
                   <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">

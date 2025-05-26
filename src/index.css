@@ -6,6 +6,15 @@ body {
   font-family: 'Inter', sans-serif;
 }
 
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Manrope', 'Inter', sans-serif;
+}
+
+/* Apply smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
 .page-root {
   min-height: 100vh;
   display: flex;

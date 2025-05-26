@@ -54,26 +54,36 @@ export default function Navbar() {
   
 
   return (
-    <header className="w-full fixed top-0 left-0 z-[1000] transition-all duration-300 bg-white shadow-md py-4">
+    <header className="w-full fixed top-0 left-0 z-[1000] transition-all duration-300 bg-white shadow-md py-4 font-sans">
       <div className="container mx-auto px-4 flex justify-between items-center">
         {/* Logo */}
-        <div style={{ width: '350px', display: 'flex', alignItems: 'center' }}>
+        <div style={{ width: '350px', display: 'flex', alignItems: 'center', overflow: 'visible' }}>
           <Link to="/">
-            <div style={{ width: '350px', height: '70px', backgroundImage: 'url(/transpoto-logo-dark.png)', backgroundSize: 'contain', backgroundRepeat: 'no-repeat', backgroundPosition: 'left center' }}></div>
+            <div style={{ 
+              width: '350px', 
+              height: '70px', 
+              backgroundImage: 'url(/transpoto-logo-dark.png)', 
+              backgroundSize: 'contain', 
+              backgroundRepeat: 'no-repeat', 
+              backgroundPosition: 'left center',
+              transform: 'scale(3.5)',
+              transformOrigin: 'left center',
+              marginRight: '50px'
+            }}></div>
           </Link>
         </div>
 
 
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center space-x-1">
+        <nav className="hidden md:flex items-center space-x-2">
           {navLinks.map((link, index) => (
             <div key={index} className="relative group">
               {link.dropdown ? (
                 <div className="relative">
                   <button 
                     onClick={() => setIsServicesOpen(!isServicesOpen)}
-                    className={`flex items-center px-4 py-2 rounded-md ${link.subLinks.some(sub => location.pathname === sub.path) ? 'text-transpoto-600 font-medium' : 'text-gray-600'} hover:text-transpoto-600 hover:bg-gray-50 transition-colors`}
+                    className={`flex items-center px-4 py-2 rounded-md text-lg ${link.subLinks.some(sub => location.pathname === sub.path) ? 'text-blue-600 font-medium' : 'text-gray-600'} hover:text-blue-600 hover:bg-blue-50 transition-colors`}
                   >
                     {link.name}
                     <FaChevronDown className={`ml-1 text-xs transition-transform ${isServicesOpen ? 'rotate-180' : ''}`} />
@@ -97,7 +107,7 @@ export default function Navbar() {
                           >
                             <Link 
                               to={subLink.path}
-                              className={`flex items-center px-4 py-2 ${location.pathname === subLink.path ? 'bg-transpoto-50 text-transpoto-600' : 'text-gray-700'} hover:bg-transpoto-50 hover:text-transpoto-600 transition-colors w-full text-left`}
+                              className={`flex items-center px-4 py-3 text-base ${location.pathname === subLink.path ? 'bg-blue-50 text-blue-600' : 'text-gray-700'} hover:bg-blue-50 hover:text-blue-600 transition-colors w-full text-left`}
                             >
                               {subLink.icon}
                               {subLink.name}
@@ -111,7 +121,7 @@ export default function Navbar() {
               ) : (
                 <Link 
                   to={link.path}
-                  className={`px-4 py-2 rounded-md ${location.pathname === link.path ? 'text-transpoto-600 font-medium' : 'text-gray-600'} hover:text-transpoto-600 hover:bg-gray-50 transition-colors block`}
+                  className={`px-4 py-2 rounded-md text-lg ${location.pathname === link.path ? 'text-blue-600 font-medium' : 'text-gray-600'} hover:text-blue-600 hover:bg-blue-50 transition-colors block`}
                 >
                   {link.name}
                 </Link>
@@ -121,7 +131,7 @@ export default function Navbar() {
           
           <Link 
             to="/contact"
-            className="ml-2 bg-transpoto-600 text-white px-4 py-2 rounded-md hover:bg-transpoto-700 transition-colors"
+            className="ml-4 bg-orange-500 text-white px-6 py-3 rounded-md hover:bg-orange-600 transition-colors text-lg font-medium shadow-md font-display"
           >
             Get a Quote
           </Link>
@@ -129,7 +139,7 @@ export default function Navbar() {
 
         {/* Mobile Menu Button */}
         <button 
-          className="md:hidden text-gray-700 p-2 rounded-md hover:bg-gray-100"
+          className="md:hidden text-gray-700 p-3 rounded-md hover:bg-gray-100"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
           aria-label="Toggle menu"
         >
@@ -155,7 +165,7 @@ export default function Navbar() {
                       <div>
                         <button 
                           onClick={() => setIsServicesOpen(!isServicesOpen)}
-                          className={`flex items-center justify-between w-full px-3 py-2 ${link.subLinks.some(sub => location.pathname === sub.path) ? 'text-transpoto-600 font-medium' : 'text-gray-700'} hover:bg-gray-50 rounded-md`}
+                          className={`flex items-center justify-between w-full px-3 py-3 ${link.subLinks.some(sub => location.pathname === sub.path) ? 'text-transpoto-600 font-medium' : 'text-gray-700'} hover:bg-gray-50 rounded-md text-lg`}
                         >
                           {link.name}
                           <FaChevronDown className={`transition-transform ${isServicesOpen ? 'rotate-180' : ''}`} />
@@ -173,7 +183,7 @@ export default function Navbar() {
                                 <Link 
                                   key={subIndex}
                                   to={subLink.path} 
-                                  className={`flex items-center px-3 py-2 ${location.pathname === subLink.path ? 'text-transpoto-600 font-medium' : 'text-gray-600'} hover:bg-gray-50 rounded-md`}
+                                  className={`flex items-center px-3 py-3 ${location.pathname === subLink.path ? 'text-transpoto-600 font-medium' : 'text-gray-600'} hover:bg-gray-50 rounded-md text-base`}
                                 >
                                   {subLink.icon}
                                   {subLink.name}
@@ -186,7 +196,7 @@ export default function Navbar() {
                     ) : (
                       <Link 
                         to={link.path}
-                        className={`block px-3 py-2 ${location.pathname === link.path ? 'text-transpoto-600 font-medium' : 'text-gray-700'} hover:bg-gray-50 rounded-md`}
+                        className={`block px-3 py-3 ${location.pathname === link.path ? 'text-transpoto-600 font-medium' : 'text-gray-700'} hover:bg-gray-50 rounded-md text-lg`}
                       >
                         {link.name}
                       </Link>
@@ -196,7 +206,7 @@ export default function Navbar() {
                 
                 <Link 
                   to="/contact"
-                  className="px-3 py-2 bg-transpoto-600 text-white rounded-md text-center mt-2"
+                  className="px-4 py-3 bg-transpoto-600 text-white rounded-md text-center mt-3 text-lg font-medium shadow-md block"
                 >
                   Get a Quote
                 </Link>
