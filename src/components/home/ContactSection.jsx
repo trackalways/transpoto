@@ -50,7 +50,7 @@ export default function ContactSection() {
       icon: <FaMapMarkerAlt className="text-blue-600 text-xl" />,
       title: 'Our Location',
       text: '5th floor, Kalson Towers, Crescent Road, Parklands, Nairobi',
-      link: 'https://www.google.com/maps/place/Kalson+Towers,+Crescent+Rd,+Parklands,+Nairobi',
+      link: 'https://goo.gl/maps/rg3JXEy',
       target: '_blank'
     },
     {
@@ -112,13 +112,13 @@ export default function ContactSection() {
               <h3 className="text-lg font-semibold text-brand-black-900 mb-4 font-display">Our Location</h3>
               <div className="aspect-w-16 aspect-h-9 rounded-md overflow-hidden">
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.808227238531!2d36.82115991533091!3d-1.2923607359772302!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f10dffd7c8b9f%3A0x7f3f3f3f3f3f3f3f!2sNairobi%2C%20Kenya!5e0!3m2!1sen!2ske!4v1620000000000!5m2!1sen!2ske"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.8220731475283!2d36.8138807!3d-1.2890456!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f10d8a9d4e7e3%3A0x5f7f7ef37c3b5a1b!2sKalson%20Towers%2C%20Crescent%20Rd%2C%20Parklands%2C%20Nairobi!5e0!3m2!1sen!2ske!4v1653389547986!5m2!1sen!2ske"
                   width="100%"
                   height="300"
                   style={{ border: 0 }}
                   allowFullScreen=""
                   loading="lazy"
-                  title="Our Location on Map"
+                  title="Kalson Towers, Crescent Road, Parklands, Nairobi"
                 ></iframe>
               </div>
             </div>

@@ -23,9 +23,9 @@ export default function Navbar() {
       path: '#',
       dropdown: true,
       subLinks: [
-        { name: 'Domestic Logistics', path: '/domestic-logistics', icon: <FaTruck className="mr-2" /> },
         { name: 'Air Freight', path: '/air-freight', icon: <FaPlane className="mr-2" /> },
         { name: 'Sea Freight', path: '/sea-freight', icon: <FaShip className="mr-2" /> },
+        { name: 'Domestic Logistics', path: '/domestic-logistics', icon: <FaTruck className="mr-2" /> },
         { name: 'Parcel & Document Shipping', path: '/parcel-document-shipping', icon: <FaEnvelope className="mr-2" /> }
       ]
     },
