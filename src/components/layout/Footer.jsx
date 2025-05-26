@@ -216,7 +216,13 @@ export default function Footer() {
         
         {/* Bottom section with copyright */}
         <div className="border-t border-gray-700 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center text-gray-400">
-          <p className="mb-4 md:mb-0">© {currentYear} Transpoto Freight Ltd. All rights reserved.</p>
+          <div className="flex flex-col md:flex-row items-center gap-2 mb-4 md:mb-0">
+            <p>© {currentYear} Transpoto Freight Ltd. All rights reserved.</p>
+            <div className="flex items-center">
+              <span className="hidden md:inline mx-2">|</span>
+              <span>Powered by <a href="https://codecrumble.in" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:text-blue-300 transition-colors font-medium">Code Crumble</a></span>
+            </div>
+          </div>
           <div className="flex flex-wrap justify-center gap-4">
             <Link to="/terms-and-conditions" className="hover:text-transpoto-400 transition-colors">Terms & Conditions</Link>
             <span className="hidden md:inline">|</span>
